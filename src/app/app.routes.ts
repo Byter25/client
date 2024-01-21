@@ -1,17 +1,16 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { ProductDetailsComponent } from './components/productos/product-details.component';
-import { ProductNewComponent } from './components/productos/product-new.component';
-import { ProductEditComponent } from './components/productos/product-edit.component';
-import { ProductsComponent } from './pages/products.component';
+import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home.component';
-import { ServiciosComponent } from './pages/servicios.component';
-import { LoginComponent } from './pages/login.component';
-import { DashboardComponent } from './pages/dashboard.component';
-import { RegisterComponent } from './pages/register.component';
+import { ProductDetailsComponent } from './components/productos/product-details.component';
+import { ProductEditComponent } from './components/productos/product-edit.component';
 import { ProductListComponent } from './components/productos/product-list.component';
+import { ProductNewComponent } from './components/productos/product-new.component';
+import { DashboardComponent } from './pages/dashboard.component';
+import { LoginComponent } from './pages/login.component';
+import { ProductsComponent } from './pages/products.component';
+import { RegisterComponent } from './pages/register.component';
+import { ServiciosComponent } from './pages/servicios.component';
 
-const routes: Routes = [
+export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
@@ -29,9 +28,3 @@ const routes: Routes = [
   { path: 'products/edit/:productId', component: ProductEditComponent },
   { path: 'products/:productId', component: ProductDetailsComponent },
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}
