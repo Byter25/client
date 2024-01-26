@@ -18,12 +18,13 @@ import {
       class="absolute h-full w-full z-0 top-0 flex justify-center items-center"
     >
       <form
-        class="relative max-w-md text-center grid grid-cols-2 grid-rows-9 w-1/2 p-0 m-0 gap-x-5"
+        class="max-w-md w-full grid grid-cols-2 grid-rows-9 gap-x-5"
         [formGroup]="formRegister"
         (ngSubmit)="onSubmit()"
       >
         <!-- ENTRADA NOMBRE -->
         <input
+          class="row-start-1 form-input rounded-t-md flex-1 appearance-none border border-gray-300 w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
           type="text"
           placeholder="Nombre"
           formControlName="nombre"
@@ -32,7 +33,6 @@ import {
               formRegister.get('nombre')?.invalid &&
               formRegister.get('nombre')?.touched
           }"
-          class="row-start-1 form-input border rounded-lg text-center"
         />
         @if(formRegister.get('nombre')?.invalid &&
         formRegister.get('nombre')?.touched){
@@ -42,7 +42,7 @@ import {
         } "
         <!-- ENTRADA APELLIDOS -->
         <input
-          class="row-start-1 col-start-2 form-input border rounded-lg h-10 text-center"
+          class="row-start-1 col-start-2 form-input rounded-t-md flex-1 appearance-none border border-gray-300 w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
           type="text"
           placeholder="Apellido"
           formControlName="apellido"
@@ -60,7 +60,7 @@ import {
         }
         <!-- ENTRADA USUARIO -->
         <input
-          class="row-start-3 form-input col-span-2 border rounded-lg h-10 w-full text-center"
+          class="row-start-3 form-input col-span-2 rounded-t-md flex-1 appearance-none border border-gray-300 w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
           type="text"
           placeholder="Usuario"
           formControlName="usuario"
@@ -81,7 +81,7 @@ import {
         }
         <!-- ENTRADA EMAIL -->
         <input
-          class="form-input row-start-5 col-span-2 border rounded-lg h-10 text-center"
+          class="form-input row-start-5 col-span-2 rounded-t-md flex-1 appearance-none border border-gray-300 w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
           type="email"
           placeholder="ejemplo@gmail.com"
           formControlName="email"
@@ -103,6 +103,7 @@ import {
         </span>
         <!-- ENTRADA CONTRASEÑA -->
         <input
+        class="form-input row-start-7 rounded-t-md flex-1 appearance-none border border-gray-300 w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
           type="password"
           placeholder="Contraseña"
           formControlName="contra"
@@ -111,7 +112,6 @@ import {
               formRegister.get('contra')?.invalid &&
               formRegister.get('contra')?.touched
           }"
-          class="form-input row-start-7 border rounded-lg h-10 text-center"
         />
         <span
           *ngIf="
@@ -133,7 +133,7 @@ import {
               formRegister.get('repContra')?.invalid &&
               formRegister.get('repContra')?.touched
           }"
-          class="form-input row-start-7 col-start-2 border rounded-lg h-10 text-center"
+          class="form-input row-start-7 col-start-2 rounded-t-md flex-1 appearance-none border border-gray-300 w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
         />
         <span
           *ngIf="
@@ -147,7 +147,7 @@ import {
           contraseña
         </span>
         <button
-          class="row-start-9 col-span-2 rounded-md text-sm font-medium text-white bg-red-600 capitalize"
+          class="row-start-9 col-span-2 group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 capitalize"
           type="submit"
         >
           registrar

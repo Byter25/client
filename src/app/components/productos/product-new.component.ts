@@ -1,10 +1,14 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { ProductsService } from 'src/app/services/products.service';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ProductListComponent } from './product-list.component';
 
 @Component({
   selector: 'app-product-new',
+  standalone: true,
+  providers: [ProductsService],
+  imports: [ReactiveFormsModule, ProductListComponent,HttpClientModule],
   template: `
   <form
       [formGroup]="formulario"
@@ -21,8 +25,6 @@ import { ProductListComponent } from './product-list.component';
       <input type="submit" value="crear" />
     </form>`,
   styleUrls: [],
-  standalone: true,
-  imports: [ReactiveFormsModule, ProductListComponent],
 })
 export class ProductNewComponent {
   formulario: FormGroup;

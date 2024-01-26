@@ -1,21 +1,26 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterModule } from '@angular/router';
+import {MatIconModule} from '@angular/material/icon'
 // import { MatIconModule } from '@angular/material/icon';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule,RouterModule, RouterLink],
-  template: ` <div class="fixed flex w-full h-full z-50 border-r-black bg-gray-600/50 backdrop-blur-sm">
+  imports: [CommonModule,RouterModule, RouterLink, MatIconModule],
+  template: ` <div class="fixed flex flex-col w-12 py-2 h-full z-50 justify-between items-center border-r-black bg-blue-900/50 backdrop-blur-sm">
     <input type="checkbox" id="menu" name="menu" value="menu" class=" hidden">
-    <label for="menu" class="ml-5 absolute">X</label>
-    <nav class="flex flex-col justify-center uppercase">
-      <ul class="flex flex-col gap-y-10 ml-2">
-        <li routerLink="listProducts">a </li>
-        <li routerLink="listClientes">clientes</li>
-        <li routerLink="listVentas">ventas</li>
+    <label for="menu"><mat-icon fontIcon="menu"/></label>
+    <nav class="uppercase">
+      <ul class="flex flex-col gap-y-5">
+        <li routerLink="listProducts"><mat-icon fontIcon="table"/></li>
+        <li routerLink="listClientes"><mat-icon>perm_identity</mat-icon></li>
+        <li routerLink="listVentas"><mat-icon>paid</mat-icon></li>
+        <li><mat-icon>analytics</mat-icon></li>
       </ul>
     </nav>
+    <div>
+      gola
+    </div>
   </div>
   <router-outlet></router-outlet>`,
   styleUrls: [],

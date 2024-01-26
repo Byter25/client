@@ -19,12 +19,21 @@ export const appRoutes: Routes = [
     path: 'dashboard',
     component: DashboardComponent,
     children: [
-      { path: 'listProducts', component: ProductListComponent },
+      {
+        path: 'listProducts',
+        component: ProductListComponent,
+        children: [
+          { path: 'new', component: ProductEditComponent },
+          { path: ':productId', component: ProductEditComponent },
+        ],
+      },
       { path: 'listClientes', component: ProductNewComponent },
       { path: 'listVentas', component: ProductNewComponent },
     ],
   },
-  { path: 'products', component: ProductsComponent },
-  { path: 'products/edit/:productId', component: ProductEditComponent },
-  { path: 'products/:productId', component: ProductDetailsComponent },
+  {
+    path: 'products',
+    component: ProductsComponent,
+    children: [{ path: ':productId', component: ProductDetailsComponent }],
+  },
 ];
