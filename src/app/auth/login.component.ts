@@ -9,7 +9,9 @@ import { Router, RouterLink } from '@angular/router';
   imports: [CommonModule, ReactiveFormsModule, RouterLink],
   template: `
     <!-- login.html -->
-    <main class="absolute top-0 w-full h-full flex items-center justify-center bg-gray-50">
+    <main
+      class="absolute top-0 w-full h-full flex items-center justify-center bg-gray-50"
+    >
       <form
         [formGroup]="formLogin"
         (ngSubmit)="onSubmit()"
@@ -48,10 +50,9 @@ import { Router, RouterLink } from '@angular/router';
       </form>
     </main>
   `,
-  styleUrls: [],
 })
 export class LoginComponent {
-  constructor(private router: Router){}
+  constructor(private router: Router) {}
 
   formLogin = new FormGroup({
     user: new FormControl(),

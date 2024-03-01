@@ -1,13 +1,13 @@
 import { Component, inject, signal } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductsService } from 'src/app/services/products.service';
+import { Api1Service } from 'src/app/core/services/api1.service';
 import { RouterLink, RouterModule } from '@angular/router';
 import { CurrencyPipe } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 @Component({
-  selector: 'app-product-list',
+  selector: 'app-obj-list',
   standalone: true,
-  providers: [ProductsService],
+  providers: [Api1Service],
   imports: [
     RouterModule,
     RouterLink,
@@ -67,15 +67,15 @@ import { MatIconModule } from '@angular/material/icon';
     <router-outlet></router-outlet>`,
   styleUrls: [],
 })
-export class ProductListComponent {
+export class ObjListComponent {
   editar(arg0: any) {
     throw new Error('Method not implemented.');
   }
   arrProducts = signal(<any[]>[]);
-  productService = inject(ProductsService);
+  api1Service = inject(Api1Service);
 
   async ngOnInit() {
-    const products = await this.productService.getAll();
+    const products = await this.api1Service.getAll("producto");
     // console.log(products)
     this.arrProducts.set(products);
   }

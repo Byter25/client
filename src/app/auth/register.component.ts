@@ -39,7 +39,7 @@ import {
         <span class=" text-red-500 text-xs italic"
           >El nombre es requerido
         </span>
-        } "
+        }
         <!-- ENTRADA APELLIDOS -->
         <input
           class="row-start-1 col-start-2 form-input rounded-t-md flex-1 appearance-none border border-gray-300 w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
