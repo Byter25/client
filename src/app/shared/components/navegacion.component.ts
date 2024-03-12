@@ -13,7 +13,7 @@ import { RouterLink } from '@angular/router';
       <li> <a routerLink="/">Inicio</a></li>
       <li> <a routerLink="/productos">Productos</a></li>
       <li> <a routerLink="/services">Services</a></li>
-      <li> <a routerLink="/login">Login</a></li>
+      <li> <a routerLink="/sesion">Login</a></li>
       <!-- <li><a class="navBar-list-opt" href="/products/new/">agregar</a></li> -->
     </ul>
   </nav>`,

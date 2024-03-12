@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Api1Service } from 'src/app/core/services/api1.service';
 import { CurrencyPipe } from '@angular/common';

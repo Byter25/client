@@ -43,7 +43,7 @@ import { Router, RouterLink } from '@angular/router';
           <p>¿No tienes cuenta?</p>
           <a
             class="font-medium text-indigo-600 hover:text-indigo-500 capitalize"
-            routerLink="/register"
+            routerLink="./register"
             >Regístrate</a
           >
         </div>

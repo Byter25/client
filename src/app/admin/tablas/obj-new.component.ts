@@ -71,7 +71,6 @@ export class ObjNewComponent extends ObjBaseComponnet {
   @Input() campos: Campos[] = [];
   formDynamic: FormGroup;
   fields: any[] = [];
-  productIdEdit = signal(<any>{});
 
   async ngOnInit() {
     const camposFiltrados = filtrarCampos(this.campos);
@@ -81,6 +80,7 @@ export class ObjNewComponent extends ObjBaseComponnet {
       label: field.nombre,
       type: field.tipo || 'text',
     }));
+
     this.fields.forEach((field) => {
       this.formDynamic.addControl(
         field.name,
@@ -90,8 +90,10 @@ export class ObjNewComponent extends ObjBaseComponnet {
   }
 
   async onSubmit() {
+
     const product = this.formDynamic.value;
     const response = await this.api.create(this.nomTable, product);
+    console.log(this.nomTable,product)
     console.log(response);
   }
 }

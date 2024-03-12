@@ -1,11 +1,8 @@
-import { DecimalPipe } from "@angular/common";
-
 export interface Usuario {
-  nombre: String;
-  descripcion: String;
-  precio: DecimalPipe;
-  stock: Number;
-  _id?: String;
-  createdAt?: Date;
-  updatedAt?: Date;
+  user:String,
+  nombre:String,
+  apellido:String,
+  correo:String,
+  contra:String,
+  rol:Number
 }

@@ -111,31 +111,32 @@ import { ObjNewComponent } from './obj-new.component';
   ],
 })
 export class TableComponent {
+
+  lista = signal(<any[]>[]);
+  nomTabla = signal('');
+  campos = signal(<any[]>[]);
+
+  activateEdit = 0;
+  objectId = '';
+  state: boolean = false;
+
   constructor(
     private root: ActivatedRoute,
     private dbService: DbService,
     private apiService: Api1Service
   ) {}
 
-  activateEdit = 0;
-  objectId = '';
-  state: boolean = false;
-
-  lista = signal(<any[]>[]);
-  nomTabla = signal('');
-  campos = signal(<any[]>[]);
-
-  async ngOnInit() {
+  ngOnInit(): void {
+    this.getTable();
+  }
+  async getTable() {
     this.root.params.subscribe((params) => {
       this.nomTabla.set(params['nombre']);
     });
-    this.get();
-  }
-
-  async get() {
     this.campos.set(await this.dbService.getColectionType(this.nomTabla()));
     this.lista.set(await this.apiService.getAll(this.nomTabla()));
   }
+
   activarModal(caso: number, item?: any) {
     this.activateEdit = caso;
     if (item != null) {

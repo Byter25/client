@@ -11,13 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ObjBaseComponnet } from './obj-base.component';
 import { CommonModule } from '@angular/common';
 import { Campos, filtrarCampos } from 'src/app/core/models/tabla.model';
-import { Product } from 'src/app/core/models/producto.model';
 
-interface Field {
-  name: string;
-  label: string;
-  type: string;
-}
 @Component({
   selector: 'app-obj-edit',
   standalone: true,

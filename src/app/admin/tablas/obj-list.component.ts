@@ -68,9 +68,6 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrls: [],
 })
 export class ObjListComponent {
-  editar(arg0: any) {
-    throw new Error('Method not implemented.');
-  }
   arrProducts = signal(<any[]>[]);
   api1Service = inject(Api1Service);
 
