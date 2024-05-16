@@ -15,7 +15,6 @@ import { CommonModule } from '@angular/common';
 import { DbService } from 'src/app/core/services/db.service';
 import { ObjBaseComponnet } from './obj-base.component';
 import { Campos, filtrarCampos } from 'src/app/core/models/tabla.model';
-import { Product } from 'src/app/core/models/producto.model';
 @Component({
   selector: 'app-obj-new',
   standalone: true,

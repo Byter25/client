@@ -1,6 +1,6 @@
 import { DecimalPipe } from "@angular/common";
 
-export interface Product {
+export interface Producto {
   nombre: String;
   descripcion: String;
   precio: DecimalPipe;

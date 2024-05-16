@@ -6,13 +6,16 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CurrencyPipe } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { DbService } from '../../core/services/db.service';
-import { ObjEditComponent } from './obj-edit.component';
-import { ObjDeleteComponent } from './obj-delete.component';
-import { ObjNewComponent } from './obj-new.component';
+import { ObjEditComponent } from './components/obj-edit.component';
+import { ObjDeleteComponent } from './components/obj-delete.component';
+import { ObjNewComponent } from './components/obj-new.component';
+import { Producto } from 'src/app/core/models/producto.model';
+import { Usuario } from 'src/app/core/models/usuario.model';
+import { Cliente } from 'src/app/core/models/cliente.model';
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  providers: [Api1Service],
+  providers: [Api1Service,CommonModule],
   template: `<main class="w-full flex flex-col items-center gap-5">
       <div class="relative flex items-center max-w-md w-1/2 mt-5">
         {{ nomTabla().toUpperCase() }}:
@@ -28,7 +31,7 @@ import { ObjNewComponent } from './obj-new.component';
         <table class="border-black font-mono border-collapse">
           <thead>
             <tr class="uppercase bg-gray-600 text-white">
-              <th class="py-2 px-4" *ngFor="let h of lista()[0] | keyvalue">
+              <th class="py-2 px-4" *ngFor="let h in data()[0] | keyvalue">
                 {{ h.key }}
               </th>
               <th class="py-2 px-4">editar</th>
@@ -36,7 +39,7 @@ import { ObjNewComponent } from './obj-new.component';
           </thead>
           <tbody>
             <tr
-              *ngFor="let item of lista()"
+              *ngFor="let item in data()"
               class="[&:nth-child(even)]:bg-gray-300"
             >
               <td *ngFor="let i of item | keyvalue" class="border px-4">
@@ -112,7 +115,7 @@ import { ObjNewComponent } from './obj-new.component';
 })
 export class TableComponent {
 
-  lista = signal(<any[]>[]);
+  data = signal(<any[]>[]);
   nomTabla = signal('');
   campos = signal(<any[]>[]);
 
@@ -127,14 +130,18 @@ export class TableComponent {
   ) {}
 
   ngOnInit(): void {
+
     this.getTable();
   }
+
   async getTable() {
+
     this.root.params.subscribe((params) => {
       this.nomTabla.set(params['nombre']);
     });
+
     this.campos.set(await this.dbService.getColectionType(this.nomTabla()));
-    this.lista.set(await this.apiService.getAll(this.nomTabla()));
+    this.data.set(await this.apiService.getAll(this.nomTabla()));
   }
 
   activarModal(caso: number, item?: any) {

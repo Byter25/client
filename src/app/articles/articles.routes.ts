@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 import { TableComponent } from '../admin/tablas/table.component';
-import { ObjNewComponent } from '../admin/tablas/obj-new.component';
-import { ObjEditComponent } from '../admin/tablas/obj-edit.component';
-import { ObjDeleteComponent } from '../admin/tablas/obj-delete.component';
+import { ObjNewComponent } from '../admin/tablas/components/obj-new.component';
+import { ObjEditComponent } from '../admin/tablas/components/obj-edit.component';
+import { ObjDeleteComponent } from '../admin/tablas/components/obj-delete.component';
 
 export const ADMIN_ROUTES: Routes = [
   {

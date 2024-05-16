@@ -4,9 +4,9 @@ import { Api1Service } from 'src/app/core/services/api1.service';
 import { CurrencyPipe } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
-import { ObjBaseComponnet } from './obj-base.component';
+import { ObjBaseComponnet } from '../../../admin/tablas/components/obj-base.component';
 @Component({
-  selector: 'app-obj-details',
+  selector: 'detalles',
   imports: [CurrencyPipe, MatIconModule, RouterLink],
   template: `<main
     class="fixed flex justify-center items-center top-0 z-10 w-full h-full bg-gray-600/50 backdrop-blur-sm transition-colors duration-200 before:bg-none"
@@ -23,7 +23,7 @@ import { ObjBaseComponnet } from './obj-base.component';
   </main>`,
   standalone: true,
 })
-export class ObjDetailsComponent extends ObjBaseComponnet{
+export class DetallesComponent extends ObjBaseComponnet{
   constructor(private route:ActivatedRoute,private api:Api1Service){
     super()
   }
