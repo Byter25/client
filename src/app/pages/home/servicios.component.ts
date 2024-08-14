@@ -3,12 +3,9 @@ import { CommonModule } from '@angular/common';
 import { GaleryComponent } from 'src/app/shared/components/galery.component';
 
 @Component({
-  selector: 'app-servicios',
+  selector: 'services',
   standalone: true,
   imports: [CommonModule, GaleryComponent],
-  styles: `
-
-`,
   template: ` <div class="w-full bg-gray-100">
     <main class="md:w-3/4 mx-auto bg-white p-4 flex flex-col gap-2 pb-10">
       <galery

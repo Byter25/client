@@ -4,14 +4,14 @@ import { ApiSenatiService } from '../../core/services/apiSenati.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({
-  selector: 'app-home',
+  selector: 'about',
   standalone: true,
   providers: [ApiSenatiService],
   imports: [CommonModule, HttpClientModule],
   template: `<div
-    class="w-full  flex flex-col items-center dark:bg-gray-100"
+    class="w-full mx-auto md:w-2/3 flex flex-col justify-center bg-white md:px-4"
   >
-    <main class=" w-3/4 max-w-full dark:bg-white">
+
       <p class=" p-4 text-3xl font-bold bg-yellow-400 text-white my-3">
         PROYECTA TU HOGAR
       </p>
@@ -72,7 +72,6 @@ import { HttpClientModule } from '@angular/common/http';
           class=" h-72 md:mx-2 m-auto"
         />
       </section>
-    </main>
   </div>`,
 })
 export class AboutComponent {}

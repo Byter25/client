@@ -16,6 +16,7 @@ import { CommonModule } from '@angular/common';
     object-fit: cover;
     filter:contrast(70%);
     transition: all .5s ease;
+    @apply transition-all duration-300 ease-in-out
   }
   img:hover {
     z-index:10;
@@ -26,7 +27,7 @@ import { CommonModule } from '@angular/common';
   }
 
 `,
-  template: ` <section class="w-full hover:bg-yellow-400 transition-all duration-300 p-2 pt-0 rounded-md">
+  template: ` <section class="w-full hover:bg-yellow-400 transition-all duration-300 ease-in-out p-2 pt-0 rounded-md ">
     <p class=" text-center text-2xl p-2  uppercase font-mono font-bold tracking-widest">{{ titulo }}</p>
     <div class="flex w-full h-72">
       <img *ngFor="let img of imagenes"

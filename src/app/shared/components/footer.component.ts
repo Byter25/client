@@ -5,7 +5,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   standalone: true,
   imports: [RouterLink, RouterLinkActive],
   template: `
-  <footer class="flex flex-col md:flex-row items-center justify-around bg-gray-950 text-white z-10 p-2">
+  <footer class="flex flex-col md:flex-row uppercase py-2 items-center justify-around bg-gray-950 text-white font-bold">
     <p>Proyecta y Diseña Hogar</p>
     <p>Derechos Reservados ©copyrigth 2024</p>
     <p>Dev Byter</p>
@@ -13,5 +13,4 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrls: [],
 })
 export class FooterComponent {
-  title = 'proyecta y diseña hogar';
 }

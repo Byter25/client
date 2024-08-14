@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavegacionComponent } from './shared/components/navegacion.component';
+import { NavegacionComponent } from './shared/components/navegacion/navegacion.component';
 import { RouterOutlet } from '@angular/router';
 import { SocialMediaComponent } from './shared/components/social-media.component';
 import { FooterComponent } from './shared/components/footer.component';

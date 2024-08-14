@@ -1,60 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiSenatiService } from '../../core/services/apiSenati.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({
-  selector: 'app-home',
+  selector: 'contact',
   standalone: true,
-  providers:[ApiSenatiService],
-  imports: [CommonModule,HttpClientModule],
-  styles:`
-  form{
-    margin:2rem;
-    padding:2rem;
-    border-radius:1rem;
-    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.1);
+  providers: [ApiSenatiService],
+  imports: [CommonModule, HttpClientModule],
+  styles: `input,textarea{
+    @apply p-2 border-2 border-gray-300 min-w-80 rounded-md
   }
-  form label{
-    min-width: 100px;
-    padding:5px;
+  input::placeholder,textarea::placeholder{
+     @apply uppercase
   }
-  form input, textarea{
-    min-width:100px;
-    width: 300px;
-    border: 1px solid gray;
-    padding:0.45rem;
-    margin:0.5rem;
-  }
-textarea {
-    resize:none;
-    width:100%;
-    height:100px;
-  }
-  `,
-  template:`<div class="h-[95vh] w-full flex flex-col items-center bg-gray-100 flex-1" >
-    <main class="md:w-3/4 min-w-[400px] bg-white flex justify-center items-center h-full">
-      <form action="">
-        <label for="">Nombres</label>
-        <input type="text" placeholder="juan martin rodrigez palacios">
-        <br>
-        <label for="">Correo</label>
-        <input type="email" placeholder="correo@gmail.com">
-        <br>
-        <label for="">Telefono</label>
-        <input type="tel" placeholder="929929929">
-        <br>
-        <label for="">Asunto</label>
-        <input type="text" placeholder="camprar">
-        <br>
-        <label for="">Mensaje</label>
-        <br>
-        <textarea placeholder="tu mensaje aqui..."></textarea>
-        <br>
-        <button type="submit" class="my-5 m-auto block bg-yellow-400 w-32 p-2 rounded-md">ENVIAR</button>
-      </form>
-    </main>
+  textarea{
+    @apply min-h-36 resize-y
+  }`,
+
+  template: ` <div class="w-full h-full mx-auto md:w-2/3 flex flex-col  items-center bg-white md:px-4">
+    <form
+      action=""
+      class="flex flex-col p-4 w-full md:w-2/3 gap-5"
+    >
+      <input type="text" placeholder="nombre completos" />
+      <input type="email" placeholder="correo@gmail.com" />
+
+      <input type="tel" placeholder="929929929" />
+      <textarea placeholder="tu mensaje aqui..."></textarea>
+      <button
+        type="submit"
+        class="font-bold text-white bg-orange-600 hover:bg-orange-500 transition-all duration-300 ease-in-out  w-32 px-4 py-2 rounded-md"
+      >
+        ENVIAR
+      </button>
+    </form>
   </div>`,
 })
-export class ContacComponent {
-}
+export class ContacComponent {}
