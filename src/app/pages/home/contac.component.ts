@@ -20,14 +20,15 @@ import { HttpClientModule } from '@angular/common/http';
 
   template: ` <div class="w-full h-full mx-auto md:w-2/3 flex flex-col  items-center bg-white md:px-4">
     <form
-      action=""
+      action="https://formsubmit.co/bryan25contacto@gmail.com"
+      method="POST"
       class="flex flex-col p-4 w-full md:w-2/3 gap-5"
     >
-      <input type="text" placeholder="nombre completos" />
-      <input type="email" placeholder="correo@gmail.com" />
+      <input type="text" name="nombres"  placeholder="nombre completos" />
+      <input type="email" name="email" placeholder="correo@gmail.com" />
 
-      <input type="tel" placeholder="929929929" />
-      <textarea placeholder="tu mensaje aqui..."></textarea>
+      <input type="tel" name="telefono" placeholder="929929929" />
+      <textarea name="asunto" placeholder="tu mensaje aqui..."></textarea>
       <button
         type="submit"
         class="font-bold text-white bg-orange-600 hover:bg-orange-500 transition-all duration-300 ease-in-out  w-32 px-4 py-2 rounded-md"
